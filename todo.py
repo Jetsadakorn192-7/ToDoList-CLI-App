@@ -16,7 +16,7 @@ from rich.text import Text
 from rich.panel import Panel
 
 console = Console()
-DATA_FILE = Path("/Users/jet/Project/Project_Todolist/todo_data.json")
+DATA_FILE = Path(__file__).parent / "todo_data.json"
 DATA_FILE.parent.mkdir(parents=True, exist_ok=True)
 
 PRIORITY_COLOR = {"high": "red", "medium": "yellow", "low": "green"}
@@ -371,7 +371,7 @@ def cmd_help():
 
     console.print("  [dim]─────────────────────────────────────────────────────[/dim]")
     console.print(f"  [dim]ข้อมูลเก็บที่:[/dim] [cyan]{DATA_FILE}[/cyan]")
-    console.print(f"  [dim]ทางลัด: เพิ่ม [/dim][bold]alias todo=\"python3 ~/Users/jet/Project/Project_Todolist/todo.py\"[/bold][dim] ใน ~/.zshrc[/dim]")
+    console.print(f"  [dim]ทางลัด: เพิ่ม [/dim][bold]alias todo=\"python3 ~/Users/<yourPath>/todo.py\"[/bold][dim] ใน ~/.zshrc[/dim]")
     console.print()
 
 
